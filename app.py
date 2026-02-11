@@ -281,7 +281,7 @@ def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_ma
     )
     fig.update_layout(xaxis_tickformat=".0%", height=max(320, 28 * len(agg)))
     fig.update_traces(textposition="outside", cliponaxis=False)
-    st.plotly_chart(fig, use_container_width=True, key=f"{key_prefix}_chart")
+    st.plotly_chart(fig, use_container_width=True, key=f"{key_prefix}_single_chart")
 
     with st.expander("Show table", expanded=False):
         st.dataframe(agg.sort_values("pct", ascending=False), use_container_width=True)
