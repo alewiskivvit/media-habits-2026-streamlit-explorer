@@ -250,7 +250,7 @@ def render_age_birthyear_hist(df_filt: pd.DataFrame, w: pd.Series, use_weights: 
         st.dataframe(hist, use_container_width=True)
 
 
-def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_maps: dict, w: pd.Series, use_weights: bool):
+def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_maps: dict, w: pd.Series, use_weights: bool, key_prefix: str):
     if var not in df_filt.columns:
         st.warning("Column not found in CSV for this question.")
         return
@@ -281,7 +281,7 @@ def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_ma
     )
     fig.update_layout(xaxis_tickformat=".0%", height=max(320, 28 * len(agg)))
     fig.update_traces(textposition="outside", cliponaxis=False)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key=f"{key_prefix}_chart")
 
     with st.expander("Show table", expanded=False):
         st.dataframe(agg.sort_values("pct", ascending=False), use_container_width=True)
