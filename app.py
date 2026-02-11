@@ -8,8 +8,14 @@ import plotly.express as px
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-CSV_PATH = BASE_DIR / "data" / "Media Habits 2026 Poll [CL] (.csv).csv"
-DATAMAP_PATH = BASE_DIR / "data" / "Media Habits 2026 Poll Datamap.xlsx"
+CSV_PATH = BASE_DIR / "data" / "poll.csv"
+DATAMAP_PATH = BASE_DIR / "data" / "datamap.xlsx"
+
+st.write("BASE_DIR:", str(BASE_DIR))
+st.write("CSV_PATH:", str(CSV_PATH), "exists:", CSV_PATH.exists(), "size:", CSV_PATH.stat().st_size if CSV_PATH.exists() else None)
+st.write("DATAMAP_PATH:", str(DATAMAP_PATH), "exists:", DATAMAP_PATH.exists(), "size:", DATAMAP_PATH.stat().st_size if DATAMAP_PATH.exists() else None)
+
+st.write("data/ contents:", [p.name for p in (BASE_DIR / "data").glob("*")])
 
 
 
