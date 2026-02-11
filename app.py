@@ -1,4 +1,3 @@
-%%writefile app.py
 import re
 from datetime import datetime
 import numpy as np
