@@ -250,7 +250,7 @@ def render_age_birthyear_hist(df_filt: pd.DataFrame, w: pd.Series, use_weights: 
         st.dataframe(hist, use_container_width=True)
 
 
-def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_maps: dict, w: pd.Series, use_weights: bool, key_prefix: str):
+def render_single_select(df_filt: pd.DataFrame, var: str, qlabel: str, single_maps: dict, w: pd.Series, use_weights: bool):
     if var not in df_filt.columns:
         st.warning("Column not found in CSV for this question.")
         return
