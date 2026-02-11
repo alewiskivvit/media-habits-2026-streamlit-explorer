@@ -6,9 +6,11 @@ import streamlit as st
 import plotly.express as px
 
 from pathlib import Path
-BASE_DIR = Path(__file__).parent
-CSV_PATH = BASE_DIR / "Media Habits 2026 Poll [CL] (.csv).csv"
-DATAMAP_PATH = BASE_DIR / "Media Habits 2026 Poll Datamap.xlsx"
+
+BASE_DIR = Path(__file__).resolve().parent
+CSV_PATH = BASE_DIR / "data" / "Media Habits 2026 Poll [CL] (.csv).csv"
+DATAMAP_PATH = BASE_DIR / "data" / "Media Habits 2026 Poll Datamap.xlsx"
+
 
 
 st.set_page_config(page_title="Media Habits 2026 Poll Explorer", layout="wide")
